@@ -117,10 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>127, 17</value>
   </metadata>
+  <data name="TamperDetectionDescriptionLbl.Text" xml:space="preserve">
+    <value>Tamper Detection utilizes a fragile, imperceptible digital watermark with 0-bit capacity to detect when changes to a file have been made. The digital watermark will be destroyed when the file has any changes made to its data. Whether or not it exists can be used to analyze the integrity of the file.</value>
+  </data>
+  <data name="CopyrightProtectionDescriptionLbl.Text" xml:space="preserve">
+    <value>Copyright Protection utilizes robust digital watermarks that have N-bit capacity in order to store information about the data's owner(s). One of the key problems with digital watermarks used for this purpose is making them imperceptible enough to effectively hide them from potential attackers.</value>
+  </data>
+  <data name="SourceTrackingDescriptionLbl.Text" xml:space="preserve">
+    <value>Source tracking involves embedding multiple robust digital watermarks with N-bit capacity into a file to denote its passage through designated distribution points. Each digital watermark will contain identifying information about the distribution point it was embedded at. Using this, owners can use the watermarks to backtrack the passage of an wrongly distributed file in order to find the source of its incorrect distribution.</value>
+  </data>
 </root>

@@ -1,0 +1,10 @@
+C:\Users\Laura Schanno\CSIT555_Class_Project\CSIT555_Class_Project\CSIT555_Class_Project\bin\Debug\CSIT555_Class_Project.exe
+C:\Users\Laura Schanno\CSIT555_Class_Project\CSIT555_Class_Project\CSIT555_Class_Project\bin\Debug\CSIT555_Class_Project.pdb
+C:\Users\Laura Schanno\CSIT555_Class_Project\CSIT555_Class_Project\CSIT555_Class_Project\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Laura Schanno\CSIT555_Class_Project\CSIT555_Class_Project\CSIT555_Class_Project\obj\x86\Debug\CSIT555_Class_Project.MainForm.resources
+C:\Users\Laura Schanno\CSIT555_Class_Project\CSIT555_Class_Project\CSIT555_Class_Project\obj\x86\Debug\CSIT555_Class_Project.Properties.Resources.resources
+C:\Users\Laura Schanno\CSIT555_Class_Project\CSIT555_Class_Project\CSIT555_Class_Project\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Laura Schanno\CSIT555_Class_Project\CSIT555_Class_Project\CSIT555_Class_Project\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Laura Schanno\CSIT555_Class_Project\CSIT555_Class_Project\CSIT555_Class_Project\obj\x86\Debug\CSIT555_Class_Project.exe
+C:\Users\Laura Schanno\CSIT555_Class_Project\CSIT555_Class_Project\CSIT555_Class_Project\obj\x86\Debug\CSIT555_Class_Project.pdb
+C:\Users\Laura Schanno\CSIT555_Class_Project\CSIT555_Class_Project\CSIT555_Class_Project\obj\x86\Debug\CSIT555_Class_Project.AboutBox.resources
