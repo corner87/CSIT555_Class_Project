@@ -8,3 +8,5 @@ C:\Users\Laura Schanno\CSIT555_Class_Project\CSIT555_Class_Project\CSIT555_Class
 C:\Users\Laura Schanno\CSIT555_Class_Project\CSIT555_Class_Project\CSIT555_Class_Project\obj\x86\Debug\CSIT555_Class_Project.exe
 C:\Users\Laura Schanno\CSIT555_Class_Project\CSIT555_Class_Project\CSIT555_Class_Project\obj\x86\Debug\CSIT555_Class_Project.pdb
 C:\Users\Laura Schanno\CSIT555_Class_Project\CSIT555_Class_Project\CSIT555_Class_Project\obj\x86\Debug\CSIT555_Class_Project.AboutBox.resources
+C:\Users\Laura Schanno\CSIT555_Class_Project\CSIT555_Class_Project\CSIT555_Class_Project\obj\x86\Debug\CSIT555_Class_Project.TamperDetectionForm.resources
+C:\Users\Laura Schanno\CSIT555_Class_Project\CSIT555_Class_Project\CSIT555_Class_Project\bin\Debug\CSIT555_Class_Project.exe.config
