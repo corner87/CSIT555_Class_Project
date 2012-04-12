@@ -46,7 +46,8 @@ namespace CSIT555_Class_Project
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         private void TamperDetectionBtn_Click(object sender, EventArgs e)
         {
-
+            TamperDetectionForm tamperDetectionForm = new TamperDetectionForm();
+            tamperDetectionForm.ShowDialog();
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////

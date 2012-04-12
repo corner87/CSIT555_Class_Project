@@ -1,4 +1,23 @@
-﻿namespace CSIT555_Class_Project
+﻿/////////////////////////////////////////////////////////////////////////////////////////////////
+/// This file is part of CSIT 555 Digital Watermarks Demo.
+///
+/// CSIT 555 Digital Watermarks Demo is free software: you can 
+/// redistribute it and/or modify it under the terms of the GNU 
+/// General Public License as published by the Free Software 
+/// Foundation, either version 3 of the License, or (at your 
+/// option) any later version.
+///
+/// CSIT 555 Digital Watermarks Demo is distributed in the hope 
+/// that it will be useful, but WITHOUT ANY WARRANTY; without even 
+/// the implied warranty of MERCHANTABILITY or FITNESS FOR A 
+/// PARTICULAR PURPOSE.  See the GNU General Public License for 
+/// more details.
+///
+/// You should have received a copy of the GNU General Public 
+/// License along with CSIT 555 Digital Watermarks Demo.  If not, 
+/// see <http://www.gnu.org/licenses/>.
+/////////////////////////////////////////////////////////////////////////////////////////////////
+namespace CSIT555_Class_Project
 {
     partial class TamperDetectionForm
     {
@@ -28,28 +47,39 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.TamperOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.FileLocationTxtBx = new System.Windows.Forms.TextBox();
             this.FileLbl = new System.Windows.Forms.Label();
             this.BrowseForFileBtn = new System.Windows.Forms.Button();
             this.EmbedWatermarkGrpBx = new System.Windows.Forms.GroupBox();
-            this.DetectWatermarkGrpBx = new System.Windows.Forms.GroupBox();
-            this.InitialInstructionsLbl = new System.Windows.Forms.Label();
-            this.EmbeddingInstructionsLbl = new System.Windows.Forms.Label();
-            this.EmbeddingKeywordLbl = new System.Windows.Forms.Label();
-            this.EmbeddingKeywordTxtBx = new System.Windows.Forms.TextBox();
-            this.DetectingInstructionsLbl = new System.Windows.Forms.Label();
-            this.DetectingKeywordLbl = new System.Windows.Forms.Label();
-            this.DetectingKeywordTxtBx = new System.Windows.Forms.TextBox();
             this.EmbedWatermarkBtn = new System.Windows.Forms.Button();
+            this.EmbeddingKeywordTxtBx = new System.Windows.Forms.TextBox();
+            this.EmbeddingKeywordLbl = new System.Windows.Forms.Label();
+            this.EmbeddingInstructionsLbl = new System.Windows.Forms.Label();
+            this.DetectWatermarkGrpBx = new System.Windows.Forms.GroupBox();
             this.DetectWatermarkBtn = new System.Windows.Forms.Button();
+            this.DetectingKeywordTxtBx = new System.Windows.Forms.TextBox();
+            this.DetectingKeywordLbl = new System.Windows.Forms.Label();
+            this.DetectingInstructionsLbl = new System.Windows.Forms.Label();
+            this.InitialInstructionsLbl = new System.Windows.Forms.Label();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.progressBar = new System.Windows.Forms.ProgressBar();
-            this.toolStripProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.DetectBackgroundWorker = new System.ComponentModel.BackgroundWorker();
+            this.EmbedBackgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.EmbedWatermarkGrpBx.SuspendLayout();
             this.DetectWatermarkGrpBx.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // TamperOpenFileDialog
+            // 
+            this.TamperOpenFileDialog.FileName = "openFileDialog";
+            this.TamperOpenFileDialog.Filter = "Text Files|*.txt";
+            this.TamperOpenFileDialog.InitialDirectory = "Application.ExecutablePath";
+            this.TamperOpenFileDialog.Title = "Open File";
+            this.TamperOpenFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.TamperOpenFileDialog_FileOk);
+            this.TamperOpenFileDialog.HelpRequest += new System.EventHandler(this.TamperOpenFileDialog_HelpRequest);
             // 
             // FileLocationTxtBx
             // 
@@ -91,6 +121,46 @@
             this.EmbedWatermarkGrpBx.TabStop = false;
             this.EmbedWatermarkGrpBx.Text = "Embed Watermark";
             // 
+            // EmbedWatermarkBtn
+            // 
+            this.EmbedWatermarkBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmbedWatermarkBtn.Location = new System.Drawing.Point(181, 75);
+            this.EmbedWatermarkBtn.Name = "EmbedWatermarkBtn";
+            this.EmbedWatermarkBtn.Size = new System.Drawing.Size(75, 23);
+            this.EmbedWatermarkBtn.TabIndex = 2;
+            this.EmbedWatermarkBtn.Text = "Embed";
+            this.EmbedWatermarkBtn.UseVisualStyleBackColor = true;
+            this.EmbedWatermarkBtn.Click += new System.EventHandler(this.EmbedWatermarkBtn_Click);
+            // 
+            // EmbeddingKeywordTxtBx
+            // 
+            this.EmbeddingKeywordTxtBx.Location = new System.Drawing.Point(63, 49);
+            this.EmbeddingKeywordTxtBx.Name = "EmbeddingKeywordTxtBx";
+            this.EmbeddingKeywordTxtBx.Size = new System.Drawing.Size(193, 20);
+            this.EmbeddingKeywordTxtBx.TabIndex = 1;
+            // 
+            // EmbeddingKeywordLbl
+            // 
+            this.EmbeddingKeywordLbl.AutoSize = true;
+            this.EmbeddingKeywordLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmbeddingKeywordLbl.Location = new System.Drawing.Point(6, 52);
+            this.EmbeddingKeywordLbl.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.EmbeddingKeywordLbl.Name = "EmbeddingKeywordLbl";
+            this.EmbeddingKeywordLbl.Size = new System.Drawing.Size(51, 13);
+            this.EmbeddingKeywordLbl.TabIndex = 0;
+            this.EmbeddingKeywordLbl.Text = "Keyword:";
+            // 
+            // EmbeddingInstructionsLbl
+            // 
+            this.EmbeddingInstructionsLbl.AutoSize = true;
+            this.EmbeddingInstructionsLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmbeddingInstructionsLbl.Location = new System.Drawing.Point(6, 16);
+            this.EmbeddingInstructionsLbl.MaximumSize = new System.Drawing.Size(250, 0);
+            this.EmbeddingInstructionsLbl.Name = "EmbeddingInstructionsLbl";
+            this.EmbeddingInstructionsLbl.Size = new System.Drawing.Size(230, 26);
+            this.EmbeddingInstructionsLbl.TabIndex = 0;
+            this.EmbeddingInstructionsLbl.Text = "Embed into a text file a digital watermark that is generated based on a keyword.";
+            // 
             // DetectWatermarkGrpBx
             // 
             this.DetectWatermarkGrpBx.Controls.Add(this.DetectWatermarkBtn);
@@ -105,46 +175,34 @@
             this.DetectWatermarkGrpBx.TabStop = false;
             this.DetectWatermarkGrpBx.Text = "Detect Watermark";
             // 
-            // InitialInstructionsLbl
+            // DetectWatermarkBtn
             // 
-            this.InitialInstructionsLbl.AutoSize = true;
-            this.InitialInstructionsLbl.Location = new System.Drawing.Point(13, 13);
-            this.InitialInstructionsLbl.MaximumSize = new System.Drawing.Size(530, 0);
-            this.InitialInstructionsLbl.Name = "InitialInstructionsLbl";
-            this.InitialInstructionsLbl.Size = new System.Drawing.Size(507, 26);
-            this.InitialInstructionsLbl.TabIndex = 5;
-            this.InitialInstructionsLbl.Text = "Select a text file that to either embed a digital watermark into it, or examine i" +
-                "t for an pre-existing watermark. Follow the steps in the correct group of contro" +
-                "ls to proceed.";
+            this.DetectWatermarkBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DetectWatermarkBtn.Location = new System.Drawing.Point(181, 75);
+            this.DetectWatermarkBtn.Name = "DetectWatermarkBtn";
+            this.DetectWatermarkBtn.Size = new System.Drawing.Size(75, 23);
+            this.DetectWatermarkBtn.TabIndex = 3;
+            this.DetectWatermarkBtn.Text = "Detect";
+            this.DetectWatermarkBtn.UseVisualStyleBackColor = true;
+            this.DetectWatermarkBtn.Click += new System.EventHandler(this.DetectWatermarkBtn_Click);
             // 
-            // EmbeddingInstructionsLbl
+            // DetectingKeywordTxtBx
             // 
-            this.EmbeddingInstructionsLbl.AutoSize = true;
-            this.EmbeddingInstructionsLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmbeddingInstructionsLbl.Location = new System.Drawing.Point(6, 16);
-            this.EmbeddingInstructionsLbl.MaximumSize = new System.Drawing.Size(250, 0);
-            this.EmbeddingInstructionsLbl.Name = "EmbeddingInstructionsLbl";
-            this.EmbeddingInstructionsLbl.Size = new System.Drawing.Size(230, 26);
-            this.EmbeddingInstructionsLbl.TabIndex = 0;
-            this.EmbeddingInstructionsLbl.Text = "Embed into a text file a digital watermark that is generated based on a keyword.";
+            this.DetectingKeywordTxtBx.Location = new System.Drawing.Point(63, 49);
+            this.DetectingKeywordTxtBx.Name = "DetectingKeywordTxtBx";
+            this.DetectingKeywordTxtBx.Size = new System.Drawing.Size(193, 20);
+            this.DetectingKeywordTxtBx.TabIndex = 2;
             // 
-            // EmbeddingKeywordLbl
+            // DetectingKeywordLbl
             // 
-            this.EmbeddingKeywordLbl.AutoSize = true;
-            this.EmbeddingKeywordLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmbeddingKeywordLbl.Location = new System.Drawing.Point(6, 52);
-            this.EmbeddingKeywordLbl.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.EmbeddingKeywordLbl.Name = "EmbeddingKeywordLbl";
-            this.EmbeddingKeywordLbl.Size = new System.Drawing.Size(51, 13);
-            this.EmbeddingKeywordLbl.TabIndex = 0;
-            this.EmbeddingKeywordLbl.Text = "Keyword:";
-            // 
-            // EmbeddingKeywordTxtBx
-            // 
-            this.EmbeddingKeywordTxtBx.Location = new System.Drawing.Point(63, 49);
-            this.EmbeddingKeywordTxtBx.Name = "EmbeddingKeywordTxtBx";
-            this.EmbeddingKeywordTxtBx.Size = new System.Drawing.Size(193, 20);
-            this.EmbeddingKeywordTxtBx.TabIndex = 1;
+            this.DetectingKeywordLbl.AutoSize = true;
+            this.DetectingKeywordLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DetectingKeywordLbl.Location = new System.Drawing.Point(6, 52);
+            this.DetectingKeywordLbl.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.DetectingKeywordLbl.Name = "DetectingKeywordLbl";
+            this.DetectingKeywordLbl.Size = new System.Drawing.Size(51, 13);
+            this.DetectingKeywordLbl.TabIndex = 2;
+            this.DetectingKeywordLbl.Text = "Keyword:";
             // 
             // DetectingInstructionsLbl
             // 
@@ -158,56 +216,33 @@
             this.DetectingInstructionsLbl.Text = "Attempt to detect a digital watermark in a text file using the watermark\'s associ" +
                 "ated keyword.";
             // 
-            // DetectingKeywordLbl
+            // InitialInstructionsLbl
             // 
-            this.DetectingKeywordLbl.AutoSize = true;
-            this.DetectingKeywordLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DetectingKeywordLbl.Location = new System.Drawing.Point(6, 52);
-            this.DetectingKeywordLbl.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.DetectingKeywordLbl.Name = "DetectingKeywordLbl";
-            this.DetectingKeywordLbl.Size = new System.Drawing.Size(51, 13);
-            this.DetectingKeywordLbl.TabIndex = 2;
-            this.DetectingKeywordLbl.Text = "Keyword:";
-            // 
-            // DetectingKeywordTxtBx
-            // 
-            this.DetectingKeywordTxtBx.Location = new System.Drawing.Point(63, 49);
-            this.DetectingKeywordTxtBx.Name = "DetectingKeywordTxtBx";
-            this.DetectingKeywordTxtBx.Size = new System.Drawing.Size(193, 20);
-            this.DetectingKeywordTxtBx.TabIndex = 2;
-            // 
-            // EmbedWatermarkBtn
-            // 
-            this.EmbedWatermarkBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmbedWatermarkBtn.Location = new System.Drawing.Point(181, 75);
-            this.EmbedWatermarkBtn.Name = "EmbedWatermarkBtn";
-            this.EmbedWatermarkBtn.Size = new System.Drawing.Size(75, 23);
-            this.EmbedWatermarkBtn.TabIndex = 2;
-            this.EmbedWatermarkBtn.Text = "Embed";
-            this.EmbedWatermarkBtn.UseVisualStyleBackColor = true;
-            this.EmbedWatermarkBtn.Click += new System.EventHandler(this.EmbedWatermarkBtn_Click);
-            // 
-            // DetectWatermarkBtn
-            // 
-            this.DetectWatermarkBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DetectWatermarkBtn.Location = new System.Drawing.Point(181, 75);
-            this.DetectWatermarkBtn.Name = "DetectWatermarkBtn";
-            this.DetectWatermarkBtn.Size = new System.Drawing.Size(75, 23);
-            this.DetectWatermarkBtn.TabIndex = 3;
-            this.DetectWatermarkBtn.Text = "Detect";
-            this.DetectWatermarkBtn.UseVisualStyleBackColor = true;
-            this.DetectWatermarkBtn.Click += new System.EventHandler(this.DetectWatermarkBtn_Click);
+            this.InitialInstructionsLbl.AutoSize = true;
+            this.InitialInstructionsLbl.Location = new System.Drawing.Point(13, 13);
+            this.InitialInstructionsLbl.MaximumSize = new System.Drawing.Size(530, 0);
+            this.InitialInstructionsLbl.Name = "InitialInstructionsLbl";
+            this.InitialInstructionsLbl.Size = new System.Drawing.Size(507, 26);
+            this.InitialInstructionsLbl.TabIndex = 5;
+            this.InitialInstructionsLbl.Text = "Select a text file that to either embed a digital watermark into it, or examine i" +
+                "t for an pre-existing watermark. Follow the steps in the correct group of contro" +
+                "ls to proceed.";
             // 
             // statusStrip
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripProgressBar,
             this.toolStripStatusLabel});
             this.statusStrip.Location = new System.Drawing.Point(0, 214);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Size = new System.Drawing.Size(554, 22);
             this.statusStrip.SizingGrip = false;
             this.statusStrip.TabIndex = 6;
+            // 
+            // toolStripStatusLabel
+            // 
+            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
+            this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
+            this.toolStripStatusLabel.Text = "Status";
             // 
             // progressBar
             // 
@@ -216,16 +251,19 @@
             this.progressBar.Size = new System.Drawing.Size(530, 23);
             this.progressBar.TabIndex = 7;
             // 
-            // toolStripProgressBar
+            // DetectBackgroundWorker
             // 
-            this.toolStripProgressBar.Name = "toolStripProgressBar";
-            this.toolStripProgressBar.Size = new System.Drawing.Size(100, 16);
+            this.DetectBackgroundWorker.WorkerReportsProgress = true;
+            this.DetectBackgroundWorker.WorkerSupportsCancellation = true;
+            this.DetectBackgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.DetectBackgroundWorker_DoWork);
+            this.DetectBackgroundWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.DetectBackgroundWorker_ProgressChanged);
+            this.DetectBackgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.DetectBackgroundWorker_RunWorkerCompleted);
             // 
-            // toolStripStatusLabel
+            // EmbedBackgroundWorker
             // 
-            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
-            this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
-            this.toolStripStatusLabel.Text = "Status";
+            this.EmbedBackgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.EmbedBackgroundWorker_DoWork);
+            this.EmbedBackgroundWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.EmbedBackgroundWorker_ProgressChanged);
+            this.EmbedBackgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.EmbedBackgroundWorker_RunWorkerCompleted);
             // 
             // TamperDetectionForm
             // 
@@ -271,8 +309,10 @@
         private System.Windows.Forms.Label DetectingInstructionsLbl;
         private System.Windows.Forms.Label InitialInstructionsLbl;
         private System.Windows.Forms.StatusStrip statusStrip;
-        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
         private System.Windows.Forms.ProgressBar progressBar;
+        private System.ComponentModel.BackgroundWorker DetectBackgroundWorker;
+        private System.ComponentModel.BackgroundWorker EmbedBackgroundWorker;
+        private System.Windows.Forms.OpenFileDialog TamperOpenFileDialog;
     }
 }
