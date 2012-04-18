@@ -31,9 +31,140 @@ namespace CSIT555_Class_Project
 {
     public partial class CopyrightProtectionForm : Form
     {
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Initializes a new instance of the CopyrightProtectionForm class. </summary>
+        ///
+        /// <remarks>   Laura Schanno, 4/18/2012. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
         public CopyrightProtectionForm()
         {
             InitializeComponent();
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Event handler. Called by BrowseForFileBtn for click events. </summary>
+        ///
+        /// <remarks>   Laura Schanno, 4/18/2012. </remarks>
+        ///
+        /// <param name="sender">   Source of the event. </param>
+        /// <param name="e">        Event information. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        private void BrowseForFileBtn_Click(object sender, EventArgs e)
+        {
+            CopyrightOpenFileDialog.ShowDialog();
+            FileLocationTxtBx.Text = CopyrightOpenFileDialog.FileName;
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Event handler. Called by EmbedBtn for click events. </summary>
+        ///
+        /// <remarks>   Laura Schanno, 4/18/2012. </remarks>
+        ///
+        /// <param name="sender">   Source of the event. </param>
+        /// <param name="e">        Event information. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        private void EmbedBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Event handler. Called by DetectBtn for click events. </summary>
+        ///
+        /// <remarks>   Laura Schanno, 4/18/2012. </remarks>
+        ///
+        /// <param name="sender">   Source of the event. </param>
+        /// <param name="e">        Event information. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        private void DetectBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Event handler. Called by DetectBackgroundWorker for do work events. </summary>
+        ///
+        /// <remarks>   Laura Schanno, 4/18/2012. </remarks>
+        ///
+        /// <param name="sender">   Source of the event. </param>
+        /// <param name="e">        Event information. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        private void DetectBackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        ///     Event handler. Called by DetectBackgroundWorker for progress changed events.
+        /// </summary>
+        ///
+        /// <remarks>   Laura Schanno, 4/18/2012. </remarks>
+        ///
+        /// <param name="sender">   Source of the event. </param>
+        /// <param name="e">        Event information. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        private void DetectBackgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        ///     Event handler. Called by DetectBackgroundWorker for run worker completed events.
+        /// </summary>
+        ///
+        /// <remarks>   Laura Schanno, 4/18/2012. </remarks>
+        ///
+        /// <param name="sender">   Source of the event. </param>
+        /// <param name="e">        Event information. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        private void DetectBackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Event handler. Called by EmbedBackgroundWorker for do work events. </summary>
+        ///
+        /// <remarks>   Laura Schanno, 4/18/2012. </remarks>
+        ///
+        /// <param name="sender">   Source of the event. </param>
+        /// <param name="e">        Event information. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        private void EmbedBackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        ///     Event handler. Called by EmbedBackgroundWorker for progress changed events.
+        /// </summary>
+        ///
+        /// <remarks>   Laura Schanno, 4/18/2012. </remarks>
+        ///
+        /// <param name="sender">   Source of the event. </param>
+        /// <param name="e">        Event information. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        private void EmbedBackgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        ///     Event handler. Called by EmbedBackgroundWorker for run worker completed events.
+        /// </summary>
+        ///
+        /// <remarks>   Laura Schanno, 4/18/2012. </remarks>
+        ///
+        /// <param name="sender">   Source of the event. </param>
+        /// <param name="e">        Event information. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        private void EmbedBackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
         }
     }
 }

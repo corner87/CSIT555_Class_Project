@@ -78,8 +78,6 @@ namespace CSIT555_Class_Project
             this.TamperOpenFileDialog.Filter = "Text Files|*.txt";
             this.TamperOpenFileDialog.InitialDirectory = "Application.ExecutablePath";
             this.TamperOpenFileDialog.Title = "Open File";
-            this.TamperOpenFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.TamperOpenFileDialog_FileOk);
-            this.TamperOpenFileDialog.HelpRequest += new System.EventHandler(this.TamperOpenFileDialog_HelpRequest);
             // 
             // FileLocationTxtBx
             // 
@@ -134,6 +132,7 @@ namespace CSIT555_Class_Project
             // 
             // EmbeddingKeywordTxtBx
             // 
+            this.EmbeddingKeywordTxtBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmbeddingKeywordTxtBx.Location = new System.Drawing.Point(63, 49);
             this.EmbeddingKeywordTxtBx.Name = "EmbeddingKeywordTxtBx";
             this.EmbeddingKeywordTxtBx.Size = new System.Drawing.Size(193, 20);
@@ -188,6 +187,7 @@ namespace CSIT555_Class_Project
             // 
             // DetectingKeywordTxtBx
             // 
+            this.DetectingKeywordTxtBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DetectingKeywordTxtBx.Location = new System.Drawing.Point(63, 49);
             this.DetectingKeywordTxtBx.Name = "DetectingKeywordTxtBx";
             this.DetectingKeywordTxtBx.Size = new System.Drawing.Size(193, 20);
@@ -214,7 +214,7 @@ namespace CSIT555_Class_Project
             this.DetectingInstructionsLbl.Size = new System.Drawing.Size(238, 26);
             this.DetectingInstructionsLbl.TabIndex = 0;
             this.DetectingInstructionsLbl.Text = "Attempt to detect a digital watermark in a text file using the watermark\'s associ" +
-                "ated keyword.";
+    "ated keyword.";
             // 
             // InitialInstructionsLbl
             // 
@@ -222,11 +222,11 @@ namespace CSIT555_Class_Project
             this.InitialInstructionsLbl.Location = new System.Drawing.Point(13, 13);
             this.InitialInstructionsLbl.MaximumSize = new System.Drawing.Size(530, 0);
             this.InitialInstructionsLbl.Name = "InitialInstructionsLbl";
-            this.InitialInstructionsLbl.Size = new System.Drawing.Size(507, 26);
+            this.InitialInstructionsLbl.Size = new System.Drawing.Size(478, 26);
             this.InitialInstructionsLbl.TabIndex = 5;
-            this.InitialInstructionsLbl.Text = "Select a text file that to either embed a digital watermark into it, or examine i" +
-                "t for an pre-existing watermark. Follow the steps in the correct group of contro" +
-                "ls to proceed.";
+            this.InitialInstructionsLbl.Text = "Select a text file that to either embed a tamper detection digital watermark into" +
+    " it, or examine it for an pre-existing watermark. Follow the steps in the correc" +
+    "t group of controls to proceed.";
             // 
             // statusStrip
             // 
@@ -261,6 +261,8 @@ namespace CSIT555_Class_Project
             // 
             // EmbedBackgroundWorker
             // 
+            this.EmbedBackgroundWorker.WorkerReportsProgress = true;
+            this.EmbedBackgroundWorker.WorkerSupportsCancellation = true;
             this.EmbedBackgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.EmbedBackgroundWorker_DoWork);
             this.EmbedBackgroundWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.EmbedBackgroundWorker_ProgressChanged);
             this.EmbedBackgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.EmbedBackgroundWorker_RunWorkerCompleted);

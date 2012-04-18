@@ -56,32 +56,6 @@ namespace CSIT555_Class_Project
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Event handler. Called by TamperOpenFileDialog for file ok events. </summary>
-        ///
-        /// <remarks>   Laura Schanno, 4/11/2012. </remarks>
-        ///
-        /// <param name="sender">   Source of the event. </param>
-        /// <param name="e">        Event information. </param>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        private void TamperOpenFileDialog_FileOk(object sender, CancelEventArgs e)
-        {
-        
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Event handler. Called by TamperOpenFileDialog for help request events. </summary>
-        ///
-        /// <remarks>   Laura Schanno, 4/11/2012. </remarks>
-        ///
-        /// <param name="sender">   Source of the event. </param>
-        /// <param name="e">        Event information. </param>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        private void TamperOpenFileDialog_HelpRequest(object sender, EventArgs e)
-        {
-        
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Event handler. Called by EmbedWatermarkBtn for click events. </summary>
         ///
         /// <remarks>   Laura Schanno, 4/11/2012. </remarks>

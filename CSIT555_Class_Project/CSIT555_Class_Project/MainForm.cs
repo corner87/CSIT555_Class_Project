@@ -31,6 +31,11 @@ namespace CSIT555_Class_Project
 {
     public partial class MainForm : Form
     {
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Initializes a new instance of the MainForm class. </summary>
+        ///
+        /// <remarks>   Laura Schanno, 4/18/2012. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
         public MainForm()
         {
             InitializeComponent();
