@@ -13,3 +13,6 @@ C:\Users\Laura Schanno\CSIT555_Class_Project\CSIT555_Class_Project\CSIT555_Class
 C:\Users\Laura Schanno\CSIT555_Class_Project\CSIT555_Class_Project\CSIT555_Class_Project\bin\Debug\log4net.dll
 C:\Users\Laura Schanno\CSIT555_Class_Project\CSIT555_Class_Project\CSIT555_Class_Project\bin\Debug\log4net.xml
 C:\Users\Laura Schanno\CSIT555_Class_Project\CSIT555_Class_Project\CSIT555_Class_Project\obj\x86\Debug\CSIT555_Class_Project.CopyrightProtectionForm.resources
+C:\Users\Ken\CSIT555_Class_Project\CSIT555_Class_Project\CSIT555_Class_Project\bin\Debug\CSIT555_Class_Project.exe.config
+C:\Users\Ken\CSIT555_Class_Project\CSIT555_Class_Project\CSIT555_Class_Project\obj\x86\Debug\CSIT555_Class_Project.exe
+C:\Users\Ken\CSIT555_Class_Project\CSIT555_Class_Project\CSIT555_Class_Project\obj\x86\Debug\CSIT555_Class_Project.pdb
