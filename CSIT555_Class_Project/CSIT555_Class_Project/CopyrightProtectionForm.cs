@@ -26,6 +26,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
 
 namespace CSIT555_Class_Project
 {
@@ -65,7 +66,9 @@ namespace CSIT555_Class_Project
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         private void EmbedBtn_Click(object sender, EventArgs e)
         {
-
+            string watermark = OwnerTxtBx.Text + " " + CorporationTxtBx.Text + " " + DateTxtBx.Text;
+            System.Drawing.Bitmap bmp = WaterMarkerImage(FileLocationTxtBx.Text, watermark);
+           bmp.Save("c:/Users/Ken/Documents/output.jpg"); 
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -163,6 +166,59 @@ namespace CSIT555_Class_Project
         /// <param name="e">        Event information. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         private void EmbedBackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        ///     Method to watermark image
+        /// </summary>
+        ///
+        /// <remarks>   Ken Hofgesang, 5/7/2012 </remarks>
+        ///
+        /// <param name="ImgPath">   Path for Source Image. </param>
+        /// <param name="watermark">        String for watermark information. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+        public static Bitmap WaterMarkerImage(string ImgPath, string watermark)
+        {
+            Bitmap bmp;
+            bmp = new Bitmap(ImgPath);
+            Graphics graphicsObject;
+            int x, y;
+            try
+            {
+                //Create graphics object from bitmap            
+                graphicsObject = Graphics.FromImage(bmp);
+            }
+            catch (Exception e)
+            {
+                //Initilize new Bitmap for watermark info
+                Bitmap bmpNew = new Bitmap(bmp.Width, bmp.Height);
+                graphicsObject = Graphics.FromImage(bmpNew);
+                graphicsObject.DrawImage(bmp, new Rectangle(0, 0, bmpNew.Width, bmpNew.Height), 0, 0, bmp.Width, bmp.Height, GraphicsUnit.Pixel);
+                bmp = bmpNew;
+            }
+            //Adjust font size based on original image size and the length of watermark text
+            int startsize = (bmp.Width / watermark.Length);
+            //x and y cordinates to draw watermark string      
+            x = 0;
+            y = bmp.Height / 4;
+
+            System.Drawing.StringFormat drawFormat = new System.Drawing.StringFormat(StringFormatFlags.NoWrap);
+            //Draw watermark on Image        
+            graphicsObject.DrawString(watermark, new Font("Times New Roman", startsize, FontStyle.Bold), new SolidBrush(Color.FromArgb(60, 255, 255, 255)), x, y, drawFormat);
+            //return Image
+            return (bmp);
+        }
+
+        private void FileLocationTxtBx_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OwnerTxtBx_TextChanged(object sender, EventArgs e)
         {
 
         }

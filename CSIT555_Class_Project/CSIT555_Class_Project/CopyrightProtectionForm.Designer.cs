@@ -56,19 +56,19 @@ namespace CSIT555_Class_Project
             this.FileLbl = new System.Windows.Forms.Label();
             this.FileLocationTxtBx = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.OwnerLbl = new System.Windows.Forms.Label();
-            this.DateLbl = new System.Windows.Forms.Label();
-            this.OwnerTxtBx = new System.Windows.Forms.TextBox();
-            this.DateTxtBx = new System.Windows.Forms.TextBox();
-            this.CorporationLbl = new System.Windows.Forms.Label();
-            this.CorporationTxtBx = new System.Windows.Forms.TextBox();
-            this.EmbedBtn = new System.Windows.Forms.Button();
-            this.DateFormatLbl = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.EmbeddingInstructionsLbl = new System.Windows.Forms.Label();
-            this.DetectingInstructionsLbl = new System.Windows.Forms.Label();
-            this.DetectedCopyrightInformationTxtBx = new System.Windows.Forms.TextBox();
+            this.DateFormatLbl = new System.Windows.Forms.Label();
+            this.EmbedBtn = new System.Windows.Forms.Button();
+            this.CorporationTxtBx = new System.Windows.Forms.TextBox();
+            this.CorporationLbl = new System.Windows.Forms.Label();
+            this.DateTxtBx = new System.Windows.Forms.TextBox();
+            this.OwnerTxtBx = new System.Windows.Forms.TextBox();
+            this.DateLbl = new System.Windows.Forms.Label();
+            this.OwnerLbl = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.DetectBtn = new System.Windows.Forms.Button();
+            this.DetectedCopyrightInformationTxtBx = new System.Windows.Forms.TextBox();
+            this.DetectingInstructionsLbl = new System.Windows.Forms.Label();
             this.EmbedBackgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.DetectBackgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.CopyrightOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
@@ -130,6 +130,7 @@ namespace CSIT555_Class_Project
             this.FileLocationTxtBx.Name = "FileLocationTxtBx";
             this.FileLocationTxtBx.Size = new System.Drawing.Size(417, 20);
             this.FileLocationTxtBx.TabIndex = 7;
+            this.FileLocationTxtBx.TextChanged += new System.EventHandler(this.FileLocationTxtBx_TextChanged);
             // 
             // groupBox1
             // 
@@ -150,60 +151,26 @@ namespace CSIT555_Class_Project
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Embed Watermark";
             // 
-            // OwnerLbl
+            // EmbeddingInstructionsLbl
             // 
-            this.OwnerLbl.AutoSize = true;
-            this.OwnerLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OwnerLbl.Location = new System.Drawing.Point(36, 39);
-            this.OwnerLbl.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.OwnerLbl.Name = "OwnerLbl";
-            this.OwnerLbl.Size = new System.Drawing.Size(41, 13);
-            this.OwnerLbl.TabIndex = 0;
-            this.OwnerLbl.Text = "Owner:";
+            this.EmbeddingInstructionsLbl.AutoSize = true;
+            this.EmbeddingInstructionsLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmbeddingInstructionsLbl.Location = new System.Drawing.Point(6, 16);
+            this.EmbeddingInstructionsLbl.Name = "EmbeddingInstructionsLbl";
+            this.EmbeddingInstructionsLbl.Size = new System.Drawing.Size(402, 13);
+            this.EmbeddingInstructionsLbl.TabIndex = 8;
+            this.EmbeddingInstructionsLbl.Text = "Enter the following copyright information that you want embedded into the image f" +
+                "ile.";
             // 
-            // DateLbl
+            // DateFormatLbl
             // 
-            this.DateLbl.AutoSize = true;
-            this.DateLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DateLbl.Location = new System.Drawing.Point(331, 65);
-            this.DateLbl.Name = "DateLbl";
-            this.DateLbl.Size = new System.Drawing.Size(33, 13);
-            this.DateLbl.TabIndex = 1;
-            this.DateLbl.Text = "Date:";
-            // 
-            // OwnerTxtBx
-            // 
-            this.OwnerTxtBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OwnerTxtBx.Location = new System.Drawing.Point(83, 36);
-            this.OwnerTxtBx.Name = "OwnerTxtBx";
-            this.OwnerTxtBx.Size = new System.Drawing.Size(242, 20);
-            this.OwnerTxtBx.TabIndex = 2;
-            // 
-            // DateTxtBx
-            // 
-            this.DateTxtBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DateTxtBx.Location = new System.Drawing.Point(370, 62);
-            this.DateTxtBx.Name = "DateTxtBx";
-            this.DateTxtBx.Size = new System.Drawing.Size(82, 20);
-            this.DateTxtBx.TabIndex = 3;
-            // 
-            // CorporationLbl
-            // 
-            this.CorporationLbl.AutoSize = true;
-            this.CorporationLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CorporationLbl.Location = new System.Drawing.Point(13, 65);
-            this.CorporationLbl.Name = "CorporationLbl";
-            this.CorporationLbl.Size = new System.Drawing.Size(64, 13);
-            this.CorporationLbl.TabIndex = 4;
-            this.CorporationLbl.Text = "Corporation:";
-            // 
-            // CorporationTxtBx
-            // 
-            this.CorporationTxtBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CorporationTxtBx.Location = new System.Drawing.Point(83, 62);
-            this.CorporationTxtBx.Name = "CorporationTxtBx";
-            this.CorporationTxtBx.Size = new System.Drawing.Size(242, 20);
-            this.CorporationTxtBx.TabIndex = 5;
+            this.DateFormatLbl.AutoSize = true;
+            this.DateFormatLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DateFormatLbl.Location = new System.Drawing.Point(458, 65);
+            this.DateFormatLbl.Name = "DateFormatLbl";
+            this.DateFormatLbl.Size = new System.Drawing.Size(61, 13);
+            this.DateFormatLbl.TabIndex = 7;
+            this.DateFormatLbl.Text = "mm-dd-yyyy";
             // 
             // EmbedBtn
             // 
@@ -216,15 +183,61 @@ namespace CSIT555_Class_Project
             this.EmbedBtn.UseVisualStyleBackColor = true;
             this.EmbedBtn.Click += new System.EventHandler(this.EmbedBtn_Click);
             // 
-            // DateFormatLbl
+            // CorporationTxtBx
             // 
-            this.DateFormatLbl.AutoSize = true;
-            this.DateFormatLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DateFormatLbl.Location = new System.Drawing.Point(458, 65);
-            this.DateFormatLbl.Name = "DateFormatLbl";
-            this.DateFormatLbl.Size = new System.Drawing.Size(61, 13);
-            this.DateFormatLbl.TabIndex = 7;
-            this.DateFormatLbl.Text = "mm-dd-yyyy";
+            this.CorporationTxtBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CorporationTxtBx.Location = new System.Drawing.Point(83, 62);
+            this.CorporationTxtBx.Name = "CorporationTxtBx";
+            this.CorporationTxtBx.Size = new System.Drawing.Size(242, 20);
+            this.CorporationTxtBx.TabIndex = 5;
+            // 
+            // CorporationLbl
+            // 
+            this.CorporationLbl.AutoSize = true;
+            this.CorporationLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CorporationLbl.Location = new System.Drawing.Point(13, 65);
+            this.CorporationLbl.Name = "CorporationLbl";
+            this.CorporationLbl.Size = new System.Drawing.Size(64, 13);
+            this.CorporationLbl.TabIndex = 4;
+            this.CorporationLbl.Text = "Corporation:";
+            // 
+            // DateTxtBx
+            // 
+            this.DateTxtBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DateTxtBx.Location = new System.Drawing.Point(370, 62);
+            this.DateTxtBx.Name = "DateTxtBx";
+            this.DateTxtBx.Size = new System.Drawing.Size(82, 20);
+            this.DateTxtBx.TabIndex = 3;
+            // 
+            // OwnerTxtBx
+            // 
+            this.OwnerTxtBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OwnerTxtBx.Location = new System.Drawing.Point(83, 36);
+            this.OwnerTxtBx.Name = "OwnerTxtBx";
+            this.OwnerTxtBx.Size = new System.Drawing.Size(242, 20);
+            this.OwnerTxtBx.TabIndex = 2;
+            this.OwnerTxtBx.TextChanged += new System.EventHandler(this.OwnerTxtBx_TextChanged);
+            // 
+            // DateLbl
+            // 
+            this.DateLbl.AutoSize = true;
+            this.DateLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DateLbl.Location = new System.Drawing.Point(331, 65);
+            this.DateLbl.Name = "DateLbl";
+            this.DateLbl.Size = new System.Drawing.Size(33, 13);
+            this.DateLbl.TabIndex = 1;
+            this.DateLbl.Text = "Date:";
+            // 
+            // OwnerLbl
+            // 
+            this.OwnerLbl.AutoSize = true;
+            this.OwnerLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OwnerLbl.Location = new System.Drawing.Point(36, 39);
+            this.OwnerLbl.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.OwnerLbl.Name = "OwnerLbl";
+            this.OwnerLbl.Size = new System.Drawing.Size(41, 13);
+            this.OwnerLbl.TabIndex = 0;
+            this.OwnerLbl.Text = "Owner:";
             // 
             // groupBox2
             // 
@@ -239,37 +252,6 @@ namespace CSIT555_Class_Project
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detect Watermark";
             // 
-            // EmbeddingInstructionsLbl
-            // 
-            this.EmbeddingInstructionsLbl.AutoSize = true;
-            this.EmbeddingInstructionsLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmbeddingInstructionsLbl.Location = new System.Drawing.Point(6, 16);
-            this.EmbeddingInstructionsLbl.Name = "EmbeddingInstructionsLbl";
-            this.EmbeddingInstructionsLbl.Size = new System.Drawing.Size(402, 13);
-            this.EmbeddingInstructionsLbl.TabIndex = 8;
-            this.EmbeddingInstructionsLbl.Text = "Enter the following copyright information that you want embedded into the image f" +
-    "ile.";
-            // 
-            // DetectingInstructionsLbl
-            // 
-            this.DetectingInstructionsLbl.AutoSize = true;
-            this.DetectingInstructionsLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DetectingInstructionsLbl.Location = new System.Drawing.Point(6, 16);
-            this.DetectingInstructionsLbl.Name = "DetectingInstructionsLbl";
-            this.DetectingInstructionsLbl.Size = new System.Drawing.Size(499, 13);
-            this.DetectingInstructionsLbl.TabIndex = 1;
-            this.DetectingInstructionsLbl.Text = "Click the Detect button to search for copyright information. Any information foun" +
-    "d will be displayed below.";
-            // 
-            // DetectedCopyrightInformationTxtBx
-            // 
-            this.DetectedCopyrightInformationTxtBx.Location = new System.Drawing.Point(6, 32);
-            this.DetectedCopyrightInformationTxtBx.Multiline = true;
-            this.DetectedCopyrightInformationTxtBx.Name = "DetectedCopyrightInformationTxtBx";
-            this.DetectedCopyrightInformationTxtBx.ReadOnly = true;
-            this.DetectedCopyrightInformationTxtBx.Size = new System.Drawing.Size(518, 76);
-            this.DetectedCopyrightInformationTxtBx.TabIndex = 2;
-            // 
             // DetectBtn
             // 
             this.DetectBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -280,6 +262,26 @@ namespace CSIT555_Class_Project
             this.DetectBtn.Text = "Detect";
             this.DetectBtn.UseVisualStyleBackColor = true;
             this.DetectBtn.Click += new System.EventHandler(this.DetectBtn_Click);
+            // 
+            // DetectedCopyrightInformationTxtBx
+            // 
+            this.DetectedCopyrightInformationTxtBx.Location = new System.Drawing.Point(6, 32);
+            this.DetectedCopyrightInformationTxtBx.Multiline = true;
+            this.DetectedCopyrightInformationTxtBx.Name = "DetectedCopyrightInformationTxtBx";
+            this.DetectedCopyrightInformationTxtBx.ReadOnly = true;
+            this.DetectedCopyrightInformationTxtBx.Size = new System.Drawing.Size(518, 76);
+            this.DetectedCopyrightInformationTxtBx.TabIndex = 2;
+            // 
+            // DetectingInstructionsLbl
+            // 
+            this.DetectingInstructionsLbl.AutoSize = true;
+            this.DetectingInstructionsLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DetectingInstructionsLbl.Location = new System.Drawing.Point(6, 16);
+            this.DetectingInstructionsLbl.Name = "DetectingInstructionsLbl";
+            this.DetectingInstructionsLbl.Size = new System.Drawing.Size(499, 13);
+            this.DetectingInstructionsLbl.TabIndex = 1;
+            this.DetectingInstructionsLbl.Text = "Click the Detect button to search for copyright information. Any information foun" +
+                "d will be displayed below.";
             // 
             // EmbedBackgroundWorker
             // 

@@ -65,7 +65,8 @@ namespace CSIT555_Class_Project
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         private void CopyrightProtectionBtn_Click(object sender, EventArgs e)
         {
-
+            CopyrightProtectionForm CopyrightProtectionForm = new CopyrightProtectionForm();
+            CopyrightProtectionForm.ShowDialog();
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -78,7 +79,7 @@ namespace CSIT555_Class_Project
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         private void SourceTrackingBtn_Click(object sender, EventArgs e)
         {
-
+          
         }
 
 
